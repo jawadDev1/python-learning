@@ -1,44 +1,22 @@
-# Python Basics 02 — Learning Notes
-
-A quick summary of the concepts covered in this practice folder.
+# Python Basics 02 — Quick Reference Notes
 
 ## Files
-- `modules.py` — importing and using built-in modules
-- `files.py` — reading/writing files
-- `error_handling.py` — try/except basics
-- `calc.py` — custom module example (imported into other scripts)
-- `exercise_script.py` — practice task
-- `funny.txt`, `funny_wc.txt`, `test2.txt` — sample/output files used in exercises
+- `modules.py`
+- `files.py`
+- `error_handling.py`
+- `calc.py`
+- `exercise_script.py`
 
-## Concepts Covered
+## Concepts
 
 ### pip
-- Package manager for installing third-party libraries from [PyPI](https://pypi.org/)
-- Install: `pip install <package-name>`
-- Uninstall: `pip uninstall <package-name>`
+pip is Python's package manager, used to install third-party libraries from [PyPI](https://pypi.org/). Install with `pip install <package-name>`, remove with `pip uninstall <package-name>`.
 
 ### Modules
-- `import <module>` to reuse code (built-in or your own `.py` files)
-- `dir(module)` — lists all available methods/attributes on a module
-- Built-in modules practiced: `math`, `calendar`
-  - `math.pow(x, y)`, `math.pi`, `math.log10(x)`, `math.floor(x)`, `math.ceil(x)`
-  - `calendar.month(year, month)`, `calendar.isleap(year)`
-- Importing your own custom module (e.g. `calc.py`) and calling its functions
+A module is just a `.py` file (built-in or your own) whose code can be reused via `import`. `dir(module)` lists everything available on it — useful for quick exploration. Common built-ins: `math` (`pow`, `pi`, `log10`, `floor`, `ceil`) and `calendar` (`month`, `isleap`).
 
 ### File Handling
-- Opening files with modes: `"w"` (write), `"a"` (append), `"r"` (read)
-- Manual open/close: `f = open(...)`, `f.write(...)`, `f.close()`
-- **Preferred pattern:** `with open("file.txt", "r") as f:` — auto-closes the file
-- Reading a whole file: `f.read()`
-- Reading line by line: `for line in f:`
-- Writing processed output to a new file (e.g. word-count per line)
+Files are opened in a mode — `"r"` (read), `"w"` (write, overwrites), `"a"` (append). `with open(...) as f:` is the preferred pattern since it auto-closes the file. `f.read()` grabs the whole file at once; looping with `for line in f:` reads it line by line.
 
 ### Error Handling
-- `try` / `except` blocks to catch runtime errors
-- Catching specific exceptions first (e.g. `ZeroDivisionError`)
-- Catching general exceptions with `except Exception as e`
-- `type(e).__name__` — get the exception's type/name for debugging
-- `input()` for reading user input (always comes in as a string — needs casting, e.g. `int(x)`)
-
-## Mini Exercise Practiced
-- A  script that reads content from one file and writes it to another file.
+`try` / `except` catches runtime errors so the program doesn't crash. Catch specific exceptions first (e.g. `ZeroDivisionError`), with a general `except Exception as e` as a fallback. `type(e).__name__` reveals the exception's class name for debugging. `input()` always returns a string, so cast it (`int(x)`) before using it as a number.
